@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle='Portfolio Beta Calculator' />
       <div
         style={{
           margin: `0 auto`,
@@ -35,9 +35,11 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <p style={{ marginTop: 20 }}>1, Calculated based on daily close price from Yahoo Finance API </p>
+          <p>2, Beta is calculated with 3 years of daily close price</p>
+          <p>3, Benchmark is SP500</p>
+          <p>4, Calculation method is Covariance of Ticker / Variance of Benchmark return</p>
+          <p>5, Feedbacks please send to wu.jingwei@yahoo.com</p>
         </footer>
       </div>
     </>
