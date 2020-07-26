@@ -4,12 +4,12 @@ var variance = require( 'compute-variance' );
 
 
 function Calculator () {
-  const [inputList, setInputList] = useState([{ stockTicker: "", weight: 1.0}]);
+  const [inputList, setInputList] = useState([{ stockTicker: "", weight: ""}]);
   const [beta, setBeta] = useState('')
   const [betaList, setBetaList] = useState('')
 
   const handleAddClick = () => {
-    setInputList([...inputList, { stockTicker: "", weight: 0.0 }]);
+    setInputList([...inputList, { stockTicker: "", weight: "" }]);
   }
 
   const handleInputChange = (e, index) => {
@@ -113,7 +113,7 @@ function Calculator () {
               className="ml10"
               name="weight"
               value={x.weight}
-              placeholder="Enter Weight"
+              placeholder="Enter Weight (0 - 1)"
               onChange={e => handleInputChange(e, i)}
             />
             <div className="btn-box">
@@ -128,8 +128,6 @@ function Calculator () {
       })}
       <div>Portfolio Beta: {beta}</div>
       <button onClick={calculateBeta}>Calculate</button>
-      <div style={{ marginTop: 20 }}>{JSON.stringify(betaList)}</div>
-      <div style={{ marginTop: 20 }}>{JSON.stringify(inputList)}</div>
     </div>
   );
 }

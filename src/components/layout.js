@@ -35,11 +35,8 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          <p style={{ marginTop: 20 }}>1, Calculated based on daily close price from Yahoo Finance API </p>
-          <p>2, Beta is calculated with 3 years of daily close price</p>
-          <p>3, Benchmark is SP500</p>
-          <p>4, Calculation method is Covariance of Ticker / Variance of Benchmark return</p>
-          <p>5, Feedbacks please send to wu.jingwei@yahoo.com</p>
+          <p style={{ marginTop: 20 }}>Calculated with daily price with 3 years look back period </p>
+          <p>Calculated with covariance of stock with SP500 / variance of SP500</p>
         </footer>
       </div>
     </>
